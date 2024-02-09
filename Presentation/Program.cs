@@ -29,12 +29,12 @@ var builder = Host.CreateDefaultBuilder().ConfigureServices(services =>
 var menuService = builder.Services.GetRequiredService<MenuService>();
 
 //menuService.CreateProduct();
- //menuService.GetProducts();
+//menuService.GetProducts();
 //menuService.UpdateProduct();
 //menuService.DeleteProduct();
 
 
-//menuService.CreateCustomer();
+menuService.CreateCustomer();
 //menuService.GetCustomers();
 //menuService.UpdateCustomer();
 //menuService.DeleteCustomer();

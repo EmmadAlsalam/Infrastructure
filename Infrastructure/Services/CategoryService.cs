@@ -47,7 +47,18 @@ namespace ConsoleApp.Services
 
         public void DeleteCategory(int id)
         {
-            _categoryRepository.Delete(x => x.Id == id);
+            try
+            {
+                _categoryRepository.Delete(x => x.Id == id);
+            }
+            catch (Exception ex)
+            {
+                // Hantera eller logga felet här
+                Console.WriteLine($"Ett fel uppstod vid radering av kategorin med id {id}: {ex.Message}");
+                // Du kan också kasta om felet om du vill att det ska hanteras på en högre nivå
+                throw;
+            }
         }
+
     }
 }

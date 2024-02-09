@@ -2,7 +2,6 @@
 using ConsoleApp.Repositories;
 using ConsoleApp.Services;
 
-
 public class CustomerService(CustomerRepository customerRepository, AddressService addressService, IdentityService identityService)
 {
     private readonly CustomerRepository _customerRepository = customerRepository;
@@ -60,4 +59,5 @@ public class CustomerService(CustomerRepository customerRepository, AddressServi
     {
         _customerRepository.Delete(x => x.Id == id);
     }
+
 }

@@ -1,4 +1,6 @@
-﻿using ConsoleApp.Services;
+﻿using ConsoleApp.Entities;
+using ConsoleApp.Services;
+using System.Security.Principal;
 
 namespace Presentation.LocalServices;
 
@@ -114,11 +116,11 @@ public class MenuService(ProductService productService, CustomerService customer
         Console.Write("City: ");
         var city = Console.ReadLine()!;
 
-        Console.Write("Role Name: ");
-        var roleName = Console.ReadLine()!;
+        Console.Write("Identity Name: ");
+        var identityName = Console.ReadLine()!;
 
 
-        var result = _customerService.CreateCustomer(firstName, lastName, email, roleName, streetName, postalCode, city);
+        var result = _customerService.CreateCustomer(firstName, lastName, email, identityName, streetName, postalCode, city);
         if (result != null)
         {
             Console.Clear();
